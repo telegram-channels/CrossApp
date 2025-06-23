@@ -64,12 +64,19 @@ jobs:
           cache-dependency-path: |
             core/go.sum
 
+      - name: Add Go to PATH
+        run: echo "$(go env GOROOT)/bin" >> $GITHUB_PATH
+
+      - name: Check Go version
+        run: go version
+
       - name: Setup Flutter Master
         if: startsWith(matrix.os, 'windows-11-arm') || startsWith(matrix.os, 'ubuntu-24.04-arm')
         uses: subosito/flutter-action@v2
         with:
           channel: 'master'
           cache: true
+
       - name: Setup Flutter
         if: ${{ !(startsWith(matrix.os, 'windows-11-arm') || startsWith(matrix.os, 'ubuntu-24.04-arm')) }}
         uses: subosito/flutter-action@v2
@@ -100,6 +107,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: refs/heads/main
+
       - name: Generate
         if: ${{ env.IS_STABLE == 'true' }}
         run: |
@@ -149,7 +157,6 @@ jobs:
               exit 1
             fi
           fi
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -165,6 +172,7 @@ jobs:
           TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
         ports:
           - 8081:8081
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
