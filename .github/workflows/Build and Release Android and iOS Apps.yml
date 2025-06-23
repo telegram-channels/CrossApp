@@ -1,99 +1,61 @@
-name: Build and Release Android and iOS Apps
+name: Flutter Build & Release
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  release:
+    types: [published]
 
 jobs:
-  build-android:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
-    - name: Set up JDK
-      uses: actions/setup-java@v2
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
       with:
-        distribution: 'zulu'
-        java-version: '11'
+        flutter-version: 'stable'
+        cache: true
 
-    - name: Set up Android SDK
-      uses: android-actions/setup-android@v2
+    - name: Install dependencies
+      run: flutter pub get
 
-    - name: Build Android app
-      run: ./gradlew assembleRelease
+    - name: Run tests
+      run: flutter test
 
-    - name: Upload Android build artifact
-      uses: actions/upload-artifact@v2
+    - name: Build APK
+      run: flutter build apk --release
+
+    # 如需构建 iOS，请取消以下注释，并确保在 macos-latest 运行器上运行
+    # - name: Build iOS
+    #   run: flutter build ios --release
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
       with:
-        name: android-app
-        path: app/build/outputs/apk/release/app-release.apk
-
-  build-ios:
-    runs-on: macos-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '2.7'
-
-    - name: Install CocoaPods
-      run: pod install
-      working-directory: ios
-
-    - name: Build iOS app
-      run: xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -sdk iphoneos -configuration Release archive -archivePath $PWD/build/Runner.xcarchive
-
-    - name: Export iOS app
-      run: xcodebuild -exportArchive -archivePath $PWD/build/Runner.xcarchive -exportOptionsPlist ios/Runner/Info.plist -exportPath $PWD/build
-
-    - name: Upload iOS build artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: ios-app
-        path: build/Runner.ipa
+        name: app-release-apk
+        path: build/app/outputs/flutter-apk/app-release.apk
 
   release:
-    needs: [build-android, build-ios]
+    needs: build
     runs-on: ubuntu-latest
+    if: github.event_name == 'release'
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
+    - name: Download APK artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: app-release-apk
+
+    - name: Upload APK to GitHub Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: app-release-apk/app-release.apk
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        draft: false
-        prerelease: false
-
-    - name: Upload Android Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: app/build/outputs/apk/release/app-release.apk
-        asset_name: app-release.apk
-        asset_content_type: application/vnd.android.package-archive
-
-    - name: Upload iOS Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: build/Runner.ipa
-        asset_name: Runner.ipa
-        asset_content_type: application/octet-stream
