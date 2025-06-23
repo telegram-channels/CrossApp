@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'
+
 env:
   IS_STABLE: ${{ !contains(github.ref, '-') }}
 
@@ -75,7 +76,6 @@ jobs:
         with:
           channel: 'stable'
           cache: true
-      #          flutter-version: 3.29.3
 
       - name: Get Flutter Dependency
         run: flutter pub get
