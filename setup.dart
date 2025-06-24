@@ -132,11 +132,11 @@ class Build {
         ),
       ];
 
-  static String get appName => "CrossApp";
+  static String get appName => "FlClash";
 
-  static String get coreName => "CrossApp";
+  static String get coreName => "FlClashCore";
 
-  static String get libName => "lib";
+  static String get libName => "libclash";
 
   static String get outDir => join(current, libName);
 
