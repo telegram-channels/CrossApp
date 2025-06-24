@@ -5,12 +5,12 @@ class AppTheme {
   static ThemeData theme() {
     return ThemeData(
       textTheme: const TextTheme(
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w600,
           color: Colors.black,
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w600,
           color: Colors.black,
@@ -18,28 +18,26 @@ class AppTheme {
         ),
       ),
       primaryTextTheme: TextTheme(
-        bodyText1: const TextStyle(color: Colors.black, fontSize: 15),
-        bodyText2: const TextStyle(color: Colors.black54, fontSize: 15),
-        subtitle1: const TextStyle(color: Colors.black),
-        headline3: const TextStyle(
+        bodyLarge: const TextStyle(color: Colors.black, fontSize: 15),
+        bodyMedium: const TextStyle(color: Colors.black54, fontSize: 15),
+        titleMedium: const TextStyle(color: Colors.black),
+        headlineMedium: const TextStyle(
             color: Colors.black, fontSize: 27, fontWeight: FontWeight.bold),
-        headline6: const TextStyle(color: Colors.black),
-        caption: TextStyle(
+        titleLarge: const TextStyle(color: Colors.black),
+        bodySmall: TextStyle(
             color: Colors.grey.shade700, wordSpacing: -1, fontSize: 12),
-
       ),
       scaffoldBackgroundColor: Colors.white,
       colorScheme: const ColorScheme.light(primary: Colors.blue),
       primaryColor: Colors.green,
-      iconTheme: const IconThemeData(color: Colors.blue,opacity: 0.8),
+      iconTheme: const IconThemeData(color: Colors.blue, opacity: 0.8),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey  ,
+        unselectedItemColor: Colors.grey,
         elevation: 20,
-        backgroundColor:Colors.white,
+        backgroundColor: Colors.white,
       ),
-
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -50,26 +48,22 @@ class AppTheme {
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.white,
           statusBarIconBrightness: Brightness.dark,
-
         ),
-
       ),
-
       fontFamily: 'jannah',
     );
   }
 
   static ThemeData darkTheme() {
     return ThemeData(
-
       scaffoldBackgroundColor: Colors.grey.shade900,
       textTheme: const TextTheme(
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
-        subtitle1: TextStyle(
+        titleMedium: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w600,
           color: Colors.white,
@@ -77,20 +71,19 @@ class AppTheme {
         ),
       ),
       primaryTextTheme: const TextTheme(
-          bodyText1: TextStyle(color: Colors.white, fontSize: 15),
-          bodyText2: TextStyle(color: Colors.white70, fontSize: 15),
-          subtitle1: TextStyle(color: Colors.white),
-          headline3: TextStyle(
-              color: Colors.white, fontSize: 27, fontWeight: FontWeight.bold),
-          headline6: TextStyle(color: Colors.white),
-          caption:
-          TextStyle(color: Colors.white54, wordSpacing: -1, fontSize: 12)),
+        bodyLarge: TextStyle(color: Colors.white, fontSize: 15),
+        bodyMedium: TextStyle(color: Colors.white70, fontSize: 15),
+        titleMedium: TextStyle(color: Colors.white),
+        headlineMedium: TextStyle(
+            color: Colors.white, fontSize: 27, fontWeight: FontWeight.bold),
+        titleLarge: TextStyle(color: Colors.white),
+        bodySmall: TextStyle(color: Colors.white54, wordSpacing: -1, fontSize: 12),
+      ),
       colorScheme: const ColorScheme.dark(primary: Colors.blue),
       primaryColor: Colors.green,
-      iconTheme: const IconThemeData(color: Colors.blue,opacity: 0.8),
+      iconTheme: const IconThemeData(color: Colors.blue, opacity: 0.8),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
-
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
         elevation: 20,
@@ -109,7 +102,6 @@ class AppTheme {
         ),
       ),
       fontFamily: 'jannah',
-
     );
   }
 }
