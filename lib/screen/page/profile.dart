@@ -199,7 +199,7 @@ class _ProfileState extends State<Profile> {
                     basename(configsList[index].path),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
-                    style: Theme.of(context).primaryTextTheme.headline6,
+                    style: Theme.of(context).primaryTextTheme.titleLarge,
                   ),
                   subtitle: link.isEmpty
                       ? const Offstage()
@@ -325,7 +325,7 @@ class _ProfileState extends State<Profile> {
               //         Text(
               //           style: Theme.of(context)
               //               .primaryTextTheme
-              //               .headline6!
+              //               .titleLarge!
               //               .copyWith(color: Colors.white),
               //           basename(
               //             configsList[index].path,

@@ -473,7 +473,7 @@ class _SettingState extends State<Setting> {
           child: Text(title,
               style: Theme.of(context)
                   .primaryTextTheme
-                  .subtitle1!
+                  .titleMedium!
                   .copyWith(color: Colors.grey)),
         ),
         SwitchListTile(
@@ -484,7 +484,7 @@ class _SettingState extends State<Setting> {
             contentPadding: EdgeInsets.zero,
             title: Text(
               description,
-              style: Theme.of(context).primaryTextTheme.subtitle1,
+              style: Theme.of(context).primaryTextTheme.titleMedium,
             ),
             value: value,
             onChanged: onChanged)

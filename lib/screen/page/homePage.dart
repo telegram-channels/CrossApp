@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style:
-                                  Theme.of(context).primaryTextTheme.headline6,
+                                  Theme.of(context).primaryTextTheme.titleLarge,
                             ),
                           );
                         }),
@@ -126,7 +126,7 @@ class HomePage extends StatelessWidget {
                             'No Profile Please import'.tr,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
-                            style: Theme.of(context).primaryTextTheme.headline6,
+                            style: Theme.of(context).primaryTextTheme.titleLarge,
                           ),
                         );
                       }),
@@ -211,7 +211,7 @@ class HomePage extends StatelessWidget {
                                   '导入到ClashCross'.tr,
                                   style: Theme.of(context)
                                       .primaryTextTheme
-                                      .headline6,
+                                      .titleLarge,
                                 ),
                               ),
                             ]),

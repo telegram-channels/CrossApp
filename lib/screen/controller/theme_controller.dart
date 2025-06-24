@@ -41,10 +41,10 @@ class ThemeController123 extends GetxController  {
       primaryTextTheme: TextTheme(
           bodyText1: const TextStyle(color: Colors.black, fontSize: 15),
           bodyText2: const TextStyle(color: Colors.black54, fontSize: 15),
-          subtitle1: const TextStyle(color: Colors.black),
+          titleMedium: const TextStyle(color: Colors.black),
           headline3: const TextStyle(
               color: Colors.black, fontSize: 27, fontWeight: FontWeight.bold),
-          headline6: const TextStyle(color: Colors.black),
+          titleLarge: const TextStyle(color: Colors.black),
           caption: TextStyle(
               color: Colors.grey.shade700, wordSpacing: -1, fontSize: 12)),
       colorScheme: ColorScheme.fromSwatch(
@@ -61,10 +61,10 @@ class ThemeController123 extends GetxController  {
       primaryTextTheme: const TextTheme(
           bodyText1: TextStyle(color: Colors.white, fontSize: 15),
           bodyText2: TextStyle(color: Colors.white70, fontSize: 15),
-          subtitle1: TextStyle(color: Colors.white),
+          titleMedium: TextStyle(color: Colors.white),
           headline3: TextStyle(
               color: Colors.white, fontSize: 27, fontWeight: FontWeight.bold),
-          headline6: TextStyle(color: Colors.white),
+          titleLarge: TextStyle(color: Colors.white),
           caption:
           TextStyle(color: Colors.white54, wordSpacing: -1, fontSize: 12)),
       colorScheme: ColorScheme.fromSwatch(

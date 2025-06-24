@@ -183,7 +183,7 @@ class _ProxyState extends State<Proxy> {
                 onTap: (index) {
                   selector = maps[tabs[index].text];
                 },
-                labelColor: Theme.of(context).primaryTextTheme.headline6?.color,
+                labelColor: Theme.of(context).primaryTextTheme.titleLarge?.color,
                 indicatorColor: Colors.pink,
                 unselectedLabelColor: Colors.pinkAccent[50],
                 indicatorSize: TabBarIndicatorSize.label,
@@ -434,7 +434,7 @@ class _ProxyState extends State<Proxy> {
                                     maxLines: 1,
                                     style: Theme.of(context)
                                         .primaryTextTheme
-                                        .headline6,
+                                        .titleLarge,
                                   ),
                                 ).marginOnly(left: 4.0),
                               ),
@@ -489,7 +489,7 @@ class _ProxyState extends State<Proxy> {
                         //                   maxLines: 1,
                         //                   style: Theme.of(context)
                         //                       .primaryTextTheme
-                        //                       .headline6,
+                        //                       .titleLarge,
                         //                 ),
                         //               ).marginOnly(left: 4.0),
                         //             ),

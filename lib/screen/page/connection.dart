@@ -130,7 +130,7 @@ class _ConnectionsState extends State<Connections> {
                         titleTextStyle: BrnTextStyle(
                             color: Theme.of(context)
                                 .primaryTextTheme
-                                .headline6
+                                .titleLarge
                                 ?.color,
                             fontSize: 20),
                       ),
@@ -153,7 +153,7 @@ class _ConnectionsState extends State<Connections> {
                         titleTextStyle: BrnTextStyle(
                             color: Theme.of(context)
                                 .primaryTextTheme
-                                .headline6
+                                .titleLarge
                                 ?.color,
                             fontSize: 20),
                       ),

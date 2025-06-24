@@ -49,7 +49,7 @@ class MyButtonAgree extends StatelessWidget {
             text,
               style: Theme.of(context)
                   .primaryTextTheme
-                  .headline6
+                  .titleLarge
           ),
         ),
       ),

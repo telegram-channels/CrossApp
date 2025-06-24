@@ -95,7 +95,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                                   "ForgetPassword".tr,
                                   style: Theme.of(context)
                                       .primaryTextTheme
-                                      .headline6,
+                                      .titleLarge,
                                 ),
                                 SizedBox(
                                     height: MediaQuery.of(context).size.height *

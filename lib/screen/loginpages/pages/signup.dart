@@ -95,7 +95,7 @@ class _SignupState extends State<Signup> {
                                   "SignUp".tr,
                                   style: Theme.of(context)
                                       .primaryTextTheme
-                                      .headline6,
+                                      .titleLarge,
                                 ),
                                 SizedBox(
                                     height: MediaQuery.of(context).size.height *
@@ -180,12 +180,12 @@ class _SignupState extends State<Signup> {
                                 //               text: '注册即表示您同意我们的 ',
                                 //               style: Theme.of(context)
                                 //                   .primaryTextTheme
-                                //                   .headline6),
+                                //                   .titleLarge),
                                 //           TextSpan(
                                 //               text: '《服务条款》和《隐私政策》',
                                 //               style: Theme.of(context)
                                 //                   .primaryTextTheme
-                                //                   .headline6),
+                                //                   .titleLarge),
                                 //         ],
                                 //       ),
                                 //     ),

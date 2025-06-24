@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                                 Text("Login".tr,
                                     style: Theme.of(context)
                                         .primaryTextTheme
-                                        .headline6),
+                                        .titleLarge),
                                 SizedBox(
                                     height: MediaQuery.of(context).size.height *
                                         0.02),
@@ -138,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                                       child: Text('忘记密码?',
                                           style: Theme.of(context)
                                               .primaryTextTheme
-                                              .headline6,
+                                              .titleLarge,
                                           textAlign: TextAlign.start),
                                     ),
                                     GestureDetector(
@@ -148,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                                       child: Text('立即注册',
                                           style: Theme.of(context)
                                               .primaryTextTheme
-                                              .headline6,
+                                              .titleLarge,
                                           textAlign: TextAlign.start),
                                     )
                                   ],

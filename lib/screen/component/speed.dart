@@ -29,7 +29,7 @@ class SpeedWidget extends StatelessWidget {
           themeData: BrnEnhanceNumberCardConfig(
             titleTextStyle: BrnTextStyle(
                 color:
-                Theme.of(context).primaryTextTheme.headline6?.color,fontSize: 20),),
+                Theme.of(context).primaryTextTheme.titleLarge?.color,fontSize: 20),),
         ),)),
         Obx(() => Container(width: 150,height: 50,child: BrnEnhanceNumberCard(
           // backgroundColor: Colors.transparent,
@@ -48,7 +48,7 @@ class SpeedWidget extends StatelessWidget {
           themeData: BrnEnhanceNumberCardConfig(
               titleTextStyle: BrnTextStyle(
                   color:
-                  Theme.of(context).primaryTextTheme.headline6?.color,fontSize: 20)),
+                  Theme.of(context).primaryTextTheme.titleLarge?.color,fontSize: 20)),
         ),)),
       ],
     );
